@@ -30,7 +30,14 @@ function App() {
                 </div>
                 <div className='header flex justify-evenly' style={{ gap: '50px', float: 'right', width: '100%' }}>
                     <div className='searchBar m-5 border-blue-400 border-2 ' style={{ background: 'red', width: '30%', height: '6vh', borderRadius: '50px', display: 'flex' }}>
-                        <input className='p-5 h-auto' value={text} onChange={(e) => { setText(e.target.value) }} type="text" placeholder='Search' style={{ width: '100%', borderRadius: '50px 0 0 50px' }} />
+                        <input className='p-5 h-auto' value={text} onChange={(e) => { setText(e.target.value) }} type="text" placeholder='Search' style={{ width: '100%', borderRadius: '50px 0 0 50px' }}
+                            onSubmit={() => {
+                                const coords = extractLatLong(text);
+                                setLatitude(coords.latitude);
+                                setLongitude(coords.longitude);
+                                console.log(JSON.stringify(coords))
+                            }}
+                        />
                         <img className='w-5 mx-4' src={search} alt="search icon"
                             onClick={() => {
                                 const coords = extractLatLong(text);
