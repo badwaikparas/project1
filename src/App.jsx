@@ -29,7 +29,7 @@ function App() {
                     <Map latitude={latitude} longitude={longitude} />
                 </div>
                 <div className='header flex justify-evenly' style={{ gap: '50px', float: 'right', width: '100%' }}>
-                    <div className='searchBar m-5 border-blue-400 border-2 ' style={{ background: 'red', width: '30%', height: '6vh', borderRadius: '50px', display: 'flex' }}>
+                    <div className='searchBar m-5 border-blue-400 border-2 ' style={{ background: 'white', width: '30%', height: '6vh', borderRadius: '50px', display: 'flex' }}>
                         <input className='p-5 h-auto' value={text} onChange={(e) => { setText(e.target.value) }} type="text" placeholder='Search' style={{ width: '100%', borderRadius: '50px 0 0 50px' }}
                             onSubmit={() => {
                                 const coords = extractLatLong(text);
@@ -56,10 +56,10 @@ function App() {
                         </div>
                         {
                             clicked &&
-                            <div className='bg-slate-500 rounded-xl px-5'>
+                            <div className='bg-white rounded-xl px-5'>
                                 <ul>
-                                    <li className='p-4 border-b-2 border-blue-400 font-bold'>Layer 1</li>
-                                    <li className='p-4 border-b-2 border-blue-400 font-bold'>Layer 2</li>
+                                    <li className='p-4 border-blue-400 font-bold' style={{ borderBottom: '1px grey solid' }}>Layer 1</li>
+                                    <li className='p-4 border-blue-400 font-bold' style={{ borderBottom: '1px grey solid' }}>Layer 2</li>
                                     <li className='p-4 font-bold'>Layer 3</li>
                                 </ul>
                             </div>
